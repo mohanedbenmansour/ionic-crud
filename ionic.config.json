@@ -1,5 +1,7 @@
 {
   "name": "ionic-nest-crud",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

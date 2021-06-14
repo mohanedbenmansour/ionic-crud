@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { UpdatePageRoutingModule } from './update-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { UpdatePage } from './update.page';
 
 @NgModule({
-  imports: [
+  imports: [ReactiveFormsModule,
     CommonModule,
     FormsModule,
     IonicModule,

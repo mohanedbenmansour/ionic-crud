@@ -5,5 +5,22 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let post of posts">
+      <ion-label>
+        <h2>{{post.title}}</h2>
+        <h3>{{post.content}}</h3>
+        <h3>{{post.uploadTime}}</h3>
+      </ion-label>
 
+      <div class="item-note" item-end>
+        <ion-button [routerLink]="['/update/', post._id]">
+          <ion-icon name="create" style="zoom: 1"></ion-icon>
+        </ion-button>
+        <ion-button (click)="removePost(post, i)">
+          <ion-icon name="trash" style="zoom: 1"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>

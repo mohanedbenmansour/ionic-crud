@@ -7,14 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { CreatePageRoutingModule } from './create-routing.module';
 
 import { CreatePage } from './create.page';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
-  imports: [
+  imports: [ReactiveFormsModule,
     CommonModule,
     FormsModule,
     IonicModule,
     CreatePageRoutingModule
   ],
-  declarations: [CreatePage]
+  declarations: [CreatePage],
+  providers:[Camera]
 })
 export class CreatePageModule {}
