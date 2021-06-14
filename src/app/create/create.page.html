@@ -29,7 +29,7 @@
 
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="danger" expand="block"
+          <ion-button type="submit" color="danger" expand="block" [disabled]="!postForm.valid"
             >Add</ion-button
           >
         </ion-col>

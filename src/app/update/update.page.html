@@ -19,7 +19,11 @@
 
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="success" expand="block"
+          <ion-button
+            type="submit"
+            color="success"
+            expand="block"
+            [disabled]="!postForm.valid"
             >update</ion-button
           >
         </ion-col>

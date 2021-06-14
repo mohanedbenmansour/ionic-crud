@@ -25,13 +25,13 @@ export class PostCrudService {
 
   createPost(post: Post): Observable<any> {
     
-    return this.httpClient.post<Post>('http://localhost:3000/post/new', post, this.httpOptions)
+    return this.httpClient.post<Post>('https://ionic-nest-crud.herokuapp.com/post/new', post, this.httpOptions)
       .pipe(
         catchError(this.handleError<Post>('Error occured'))
       );
   }
   getPost(id): Observable<Post[]> {
-    return this.httpClient.get<Post[]>('http://localhost:3000/post/fetch-post?id=' + id)
+    return this.httpClient.get<Post[]>('https://ionic-nest-crud.herokuapp.com/fetch-post?id=' + id)
       .pipe(
         tap(_ => console.log(`Post fetched: ${id}`)),
         catchError(this.handleError<Post[]>(`Get post id=${id}`))
@@ -39,14 +39,14 @@ export class PostCrudService {
   }
   getPosts(): Observable<Post[]> {
 
-    return this.httpClient.get<Post[]>('http://localhost:3000/post/all')
+    return this.httpClient.get<Post[]>('https://ionic-nest-crud.herokuapp.com/post/all')
       .pipe(
         tap(users => console.log('posts retrieved!')),
         catchError(this.handleError<Post[]>('Get Post', []))
       );
   }
   deletePost(id): Observable<Post[]> {
-    return this.httpClient.delete<Post[]>('http://localhost:3000/post/delete/?id=' + id, this.httpOptions)
+    return this.httpClient.delete<Post[]>('https://ionic-nest-crud.herokuapp.com/post/delete/?id=' + id, this.httpOptions)
       .pipe(
         tap(_ => console.log(`post deleted: ${id}`)),
         catchError(this.handleError<Post[]>('Delete post'))
@@ -54,7 +54,7 @@ export class PostCrudService {
   }
   updatePost(post: Post,id): Observable<Post[]> {
 
-    return  this.httpClient.put<Post[]>('http://localhost:3000/post/update/?id=' + id, post, this.httpOptions)
+    return  this.httpClient.put<Post[]>('https://ionic-nest-crud.herokuapp.com/post/update/?id=' + id, post, this.httpOptions)
     .pipe(
       tap(_ => console.log(`post updated: ${id}`)),
       catchError(this.handleError<Post[]>('Update Post'))
