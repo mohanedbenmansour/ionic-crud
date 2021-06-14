@@ -26,6 +26,7 @@ export class ListPage implements OnInit {
       .subscribe(() => {
           this.posts.splice(i, 1);
           console.log('post deleted!')
+         
         }
       )
     }
